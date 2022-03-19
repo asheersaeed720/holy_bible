@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:holy_bible/src/auth/views/forgot_password_screen.dart';
 import 'package:holy_bible/src/auth/views/sign_up_screen.dart';
 import 'package:holy_bible/src/tab_screen.dart';
 import 'package:holy_bible/utils/constants.dart';
@@ -53,14 +54,19 @@ class LogInScreen extends StatelessWidget {
                     ),
                     userInput(emailController, 'Email', TextInputType.emailAddress),
                     userInput(passwordController, 'Password', TextInputType.visiblePassword),
-                    Text(
-                      'Forgot password ?',
-                      style: kBodyStyle,
+                    InkWell(
+                      onTap: () {
+                        Get.toNamed(ForgotPasswordScreen.routeName);
+                      },
+                      child: Text(
+                        'Forgot password ?',
+                        style: kBodyStyle,
+                      ),
                     ),
                     CustomAsyncBtn(
                       btntxt: 'LOG IN',
                       onPress: () {
-                        Get.toNamed(TabScreen.routeName);
+                        Get.offNamed(TabScreen.routeName);
                       },
                     ),
                     const SizedBox(height: 20),

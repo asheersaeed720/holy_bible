@@ -3,8 +3,10 @@ import 'package:holy_bible/utils/constants.dart';
 
 final lightThemeData = ThemeData(
   brightness: Brightness.light,
+  platform: TargetPlatform.iOS,
   primaryColor: kPrimaryColor,
   scaffoldBackgroundColor: Colors.white,
+  floatingActionButtonTheme: const FloatingActionButtonThemeData(backgroundColor: kPrimaryColor),
   appBarTheme: const AppBarTheme(
     titleTextStyle: TextStyle(
       color: Colors.black87,

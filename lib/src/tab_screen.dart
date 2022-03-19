@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:holy_bible/src/bookmark/bookmark_screen.dart';
+import 'package:holy_bible/src/note/note_screen.dart';
 import 'package:holy_bible/utils/constants.dart';
 
 class TabScreen extends StatelessWidget {
@@ -10,31 +12,23 @@ class TabScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> _widgetOptions = const <Widget>[
-      Center(child: Text('Share')),
-      Center(child: Text('Add Image')),
-      Center(child: Text('Add Notes')),
-      Center(child: Text('Bookmark')),
+      NoteScreen(),
+      BookMarkScreen(),
       Center(child: Text('Copy')),
       Center(child: Text('Text')),
     ];
 
     return DefaultTabController(
-      length: 5,
+      length: 4,
       child: GetBuilder<TabController>(
         init: TabController(),
         builder: (tabController) => Scaffold(
           body: _widgetOptions.elementAt(tabController.selectedIndex),
           bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
+            selectedFontSize: 12.0,
+            unselectedFontSize: 10.0,
             items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.share),
-                label: 'Share',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.image),
-                label: 'Add Image',
-              ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.note_add),
                 label: 'Add Notes',
