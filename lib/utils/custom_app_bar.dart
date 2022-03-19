@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:holy_bible/src/auth/views/login_screen.dart';
 
 customAppBar(String titleTxt, {isSearchIcon = false}) {
   return AppBar(
@@ -12,8 +14,9 @@ customAppBar(String titleTxt, {isSearchIcon = false}) {
             child: Text("Setting"),
             value: 1,
           ),
-          const PopupMenuItem(
-            child: Text("Logout"),
+          PopupMenuItem(
+            onTap: () => Get.toNamed(LogInScreen.routeName),
+            child: const Text("Logout"),
             value: 2,
           )
         ],

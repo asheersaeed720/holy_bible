@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:holy_bible/src/auth/views/login_screen.dart';
 import 'package:holy_bible/src/main_binding.dart';
-import 'package:holy_bible/src/tab_screen.dart';
 import 'package:holy_bible/utils/app_theme.dart';
 import 'package:holy_bible/utils/routes.dart';
 
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         theme: lightThemeData,
         // darkTheme: darkThemeData,
         initialBinding: MainBinding(),
-        initialRoute: TabScreen.routeName,
+        initialRoute: LogInScreen.routeName,
         getPages: routes,
       );
 }
