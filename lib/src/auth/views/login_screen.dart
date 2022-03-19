@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:holy_bible/src/auth/views/sign_up_screen.dart';
+import 'package:holy_bible/src/tab_screen.dart';
 import 'package:holy_bible/utils/constants.dart';
 import 'package:holy_bible/widgets/custom_async_btn.dart';
 
@@ -58,7 +59,9 @@ class LogInScreen extends StatelessWidget {
                     ),
                     CustomAsyncBtn(
                       btntxt: 'LOG IN',
-                      onPress: () {},
+                      onPress: () {
+                        Get.toNamed(TabScreen.routeName);
+                      },
                     ),
                     const SizedBox(height: 20),
                     Row(

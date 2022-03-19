@@ -14,11 +14,11 @@ final List<GetPage<dynamic>> routes = [
     page: () => SignUpScreen(),
   ),
   GetPage(
-    name: ForgotPasswordScreen.routeName,
-    page: () => ForgotPasswordScreen(),
-  ),
-  GetPage(
     name: TabScreen.routeName,
     page: () => const TabScreen(),
+  ),
+  GetPage(
+    name: ForgotPasswordScreen.routeName,
+    page: () => ForgotPasswordScreen(),
   ),
 ];

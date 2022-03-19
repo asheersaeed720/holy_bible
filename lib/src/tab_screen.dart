@@ -9,12 +9,13 @@ class TabScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> _widgetOptions = <Widget>[
-      Text('1'),
-      Text('2'),
-      Text('3'),
-      Text('4'),
-      Text('5'),
+    List<Widget> _widgetOptions = const <Widget>[
+      Center(child: Text('Share')),
+      Center(child: Text('Add Image')),
+      Center(child: Text('Add Notes')),
+      Center(child: Text('Bookmark')),
+      Center(child: Text('Copy')),
+      Center(child: Text('Text')),
     ];
 
     return DefaultTabController(
@@ -27,52 +28,33 @@ class TabScreen extends StatelessWidget {
             type: BottomNavigationBarType.fixed,
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-                label: 'Search',
+                icon: Icon(Icons.share),
+                label: 'Share',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.track_changes),
-                label: 'Your Rides',
+                icon: Icon(Icons.image),
+                label: 'Add Image',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.add),
-                label: 'Publish',
+                icon: Icon(Icons.note_add),
+                label: 'Add Notes',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.chat),
-                label: 'Inbox',
+                icon: Icon(Icons.bookmark_add_rounded),
+                label: 'Bookmark',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle_outlined),
-                label: 'Profile',
+                icon: Icon(Icons.copy),
+                label: 'Copy',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.font_download),
+                label: 'Text',
               ),
             ],
             currentIndex: tabController.selectedIndex,
             selectedItemColor: kPrimaryColor,
             onTap: tabController.onItemTapped,
-          ),
-          floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
-          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-          floatingActionButton: Container(
-            height: 50.0,
-            width: 50.0,
-            decoration: BoxDecoration(
-              border: Border.all(color: kPrimaryColor, width: 2.5),
-              borderRadius: BorderRadius.circular(32.0),
-            ),
-            child: FloatingActionButton(
-              elevation: 4.0,
-              disabledElevation: 0,
-              backgroundColor: Colors.white,
-              child: const Icon(
-                Icons.add,
-                color: kPrimaryColor,
-                size: 28.0,
-              ),
-              onPressed: () {
-                tabController.onItemTapped(2);
-              },
-            ),
           ),
         ),
       ),
