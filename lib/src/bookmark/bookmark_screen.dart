@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:holy_bible/src/bookmark/bookmark_detail_screen.dart';
 import 'package:holy_bible/utils/constants.dart';
 import 'package:holy_bible/utils/custom_app_bar.dart';
 import 'package:holy_bible/widgets/cache_img_widget.dart';
@@ -25,7 +27,7 @@ class BookMarkScreen extends StatelessWidget {
 
   Widget _buildBookMarkItemView(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () => Get.toNamed(BookMarkDetailScreen.routeName),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
